@@ -1,0 +1,20 @@
+<!doctype html>                                                                                                                                     
+<html>                                                                                                                                              
+ <head>                                                                                                                                             
+  <title>Weather</title>                                                                                                                            
+  <link rel="stylesheet" href="/main.css" />                                                                                                        
+ </head>                                                                                                                                            
+ <body>                                                                                                                                             
+  <h1>Check the Weather</h1>                                                                                                                        
+                                                                                                                                                    
+  <form method="get" action="/weather">                                                                                                             
+   <label>City:</label>                                                                                                                             
+   <input type="text" name="city" placeholder="e.g. London">                                                                                        
+   <button type="submit">Get Weather</button>                                                                                                       
+  </form>                                                                                                                                           
+                                                                                                                                                    
+  <% if (weatherMessage) { %>                                                                                                                       
+   <p><%= weatherMessage %></p>                                                                                                                     
+  <% } %>                                                                                                                                           
+ </body>                                                                                                                                            
+</html> 
