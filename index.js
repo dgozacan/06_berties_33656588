@@ -4,7 +4,9 @@ var session = require('express-session')
                                                                                                                                                     
 var ejs = require('ejs')                                                                                                                            
 const path = require('path')                                                                                                                        
-const expressSanitizer = require("express-sanitizer");                                                                                              
+const expressSanitizer = require("express-sanitizer");       
+
+
                                                                                                                                                     
 var mysql = require('mysql2');                                                                                                                      
                                                                                                                                                     
@@ -46,7 +48,8 @@ app.use(express.urlencoded({ extended: true }))
 // Create an input sanitizer                                                                                                                        
 app.use(expressSanitizer());                                                                                                                        
                                                                                                                                                     
-                                                                                                                                                    
+
+
 // Set up public folder (for css and static js)                                                                                                     
 app.use(express.static(path.join(__dirname, 'public')))                                                                                             
                                                                                                                                                     
@@ -63,7 +66,10 @@ app.use('/users', usersRoutes)
                                                                                                                                                     
 // Load the route handlers for /books                                                                                                               
 const booksRoutes = require('./routes/books')                                                                                                       
-app.use('/books', booksRoutes)                                                                                                                      
+app.use('/books', booksRoutes) 
+
+const apiRoutes = require('./routes/api');
+app.use('/api', apiRoutes);
                                                                                                                                                     
 // Start the web app listening                                                                                                                      
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
